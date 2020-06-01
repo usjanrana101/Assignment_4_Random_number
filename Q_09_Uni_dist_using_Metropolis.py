@@ -8,7 +8,6 @@ Created on Thu May 21 15:00:20 2020
 
 import numpy as np
 from matplotlib import pyplot as plt
-fig , ax = plt.subplots(1,1)
 
 # Definition of the PDF
 def pdf(x):
@@ -46,7 +45,7 @@ for i in range(steps):
     rejected_sampl_arr[i] = theta_prime
 
 # plotting of sample histogram and PDF    
-ax.plot(x,pdf_arr, color = 'red' , label='Uniform PDF')
+plt.plot(x,pdf_arr, color = 'red' , label='Uniform PDF')
 plt.hist(sampl_arr, density = 'true' , bins = 100 , 
                         label = 'Histogram Plot for n=100000' )
 plt.title('Uniform Distribution \n Using Metropolis Algorithm' ,
@@ -65,7 +64,8 @@ plt.plot(steps_arr , sampl_arr , label = "Markov chain" , color = 'Red')
 plt.xlabel('steps', fontsize = 17)
 plt.ylabel('theta' , fontsize = 17)
 plt.ylim(0,10)
-plt.xlim(0,10000)
+plt.xlim(0,100000)
 plt.title('Markov Chain.', fontsize=20 , color = 'red')
 plt.legend()
 plt.show()
+
